@@ -1,11 +1,17 @@
-<h1>Create a new dose</h1>
+<div class="text-center">
+  <h1>Create a new dose</h1>
+   <%= link_to "Go back to the coctail", cocktail_path(@cocktail) %>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <!-- how to display ingredients list? -->
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.button :submit %>
-<% end %>
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description, placeholder: "Dose" %>
+        <!-- how to display ingredients list? -->
+        <%= f.input :ingredient_id, placeholder: "Select ingredient", collection: Ingredient.all %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
