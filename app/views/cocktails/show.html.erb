@@ -1,4 +1,21 @@
 <div class="text-center">
   <h1> <%= @cocktail.name %> </h1>
-  <%= link_to "Add dose for this cocktail", new_cocktail_dose_path(@cocktail) %>
+  <%= link_to "Add dose for this cocktail", new_cocktail_dose_path(@cocktail) %> |
+  <%= link_to "Go back to all cocktails", cocktails_path %>
+</div>
+
+<!-- Display ingredients with doses -->
+<div class="container">
+  <hr>
+  <ul class="list-unstyled">
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to("Delete" , dose_path(dose), method: :delete) %>
+
+        <hr>
+      </li>
+    <% end %>
+  </ul>
 </div>
