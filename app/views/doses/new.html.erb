@@ -1,0 +1,11 @@
+<h1>Create a new dose</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <!-- how to display ingredients list? -->
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.button :submit %>
+<% end %>
+
+
+
