@@ -1,4 +1,18 @@
-<h1>Hello there!</h1>
-<% @cocktails.each do |cocktail| %>
-  <%= cocktail %>
-<% end %>
+<div class="text-center">
+  <h1>Hello there!</h1>
+  <%= link_to "Add a new cocktail", new_cocktail_path %>
+</div>
+
+<div class="container">
+  <hr>
+  <ul class="list-unstyled">
+  <% @cocktails.each do |cocktail| %>
+
+    <li>
+      <%= cocktail.name %>
+      <p> <%= link_to "See details", cocktail_path(cocktail) %> </p>
+      <hr>
+    </li>
+  <% end %>
+  </ul>
+</div>
