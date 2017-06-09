@@ -14,6 +14,11 @@
         <%= dose.ingredient.name %>
         <%= link_to("Delete" , dose_path(dose), method: :delete) %>
 
+        <% if @cocktail.photo? %>
+          <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+        <% end %>
+
+
         <hr>
       </li>
     <% end %>

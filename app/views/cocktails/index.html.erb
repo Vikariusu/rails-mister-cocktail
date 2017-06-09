@@ -9,8 +9,18 @@
   <% @cocktails.each do |cocktail| %>
 
     <li>
-      <%= cocktail.name %>
-      <p> <%= link_to "See details", cocktail_path(cocktail) %> </p>
+      <!-- <p> <%= link_to "See details", cocktail_path(cocktail) %> </p> -->
+        <% picture = cocktail.photo ? cocktail.photo.path : "jez-timms-128933_ymgz05.jpg" %>
+      <div class="card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                 url('<%= cl_image_path picture, height: 400, width: 600, crop: :fill %>')">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+            <p> <%= link_to "See details", cocktail_path(cocktail) %> </p>
+          </div>
+          <!-- <a class="card-link" href="#" ></a> -->
+        </div>
       <hr>
     </li>
   <% end %>

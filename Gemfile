@@ -28,6 +28,9 @@ gem 'figaro'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
 gem 'autoprefixer-rails'
 
 # Use jquery as the JavaScript library
